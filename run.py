@@ -10,3 +10,4 @@ def two_sum(nums, target):
 nums = [1, 2, 3, 4, 5]
 target = 9
 print(two_sum(nums, target))
+
