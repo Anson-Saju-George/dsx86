@@ -26,25 +26,30 @@ def two_sum_multiple(nums, target):
     return res if res else None
 
 
+"""
+    To be studies later: Uses sliding window / two-pointer technique after sorting the array.
+"""
+
+
 def two_sum_unique(nums, target):
-    nums.sort()
-    res = []
-    l, r = 0, len(nums) - 1
-    while l < r:
-        s = nums[l] + nums[r]
-        if s == target:
-            res.append([nums[l], nums[r]])
-            l += 1
-            r -= 1
-            while l < r and nums[l] == nums[l - 1]:
+    nums.sort()  # Sort the array to use two-pointer technique
+    res = []  # Result list for unique pairs
+    l, r = 0, len(nums) - 1  # Initialize two pointers
+    while l < r:  # While left pointer is less than right pointer
+        s = nums[l] + nums[r]  # Calculate the sum of values at both pointers
+        if s == target:  # If sum matches target
+            res.append([nums[l], nums[r]])  # Append the pair to result
+            l += 1  # Move left pointer to the right
+            r -= 1  # Move right pointer to the left
+            while l < r and nums[l] == nums[l - 1]:  # Skip duplicates for left pointer
                 l += 1
-            while l < r and nums[r] == nums[r + 1]:
+            while l < r and nums[r] == nums[r + 1]:  # Skip duplicates for right pointer
                 r -= 1
-        elif s < target:
+        elif s < target:  # If sum is less than target, move left pointer to the right
             l += 1
-        else:
+        else:  # If sum is greater than target, move right pointer to the left
             r -= 1
-    return res
+    return res  # Return the list of unique pairs
 
 
 nums = [2, 7, 11, 15, 8, 1]
