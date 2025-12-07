@@ -1,30 +1,17 @@
-def two_sum(nums, target):
-    Map = {}
-
-    for i, val in enumerate(nums):
-        comp = target - val
-        if comp in Map:
-            return [Map[comp], i]
-        Map[val] = i
-
-nums = [1, 2, 3, 4, 5]
-target = 9
-print(two_sum(nums, target))
-
-
-def two_sum_multiple(nums, target):
-    Map = {}
-    res = []
+def longest_substring(s: str):
+    ls = {}
+    l = 0
+    max_len = 0
     
-    for i, val in enumerate(nums):
-        comp = target - val
-        if comp in Map:
-            for prev in Map[comp]:
-                if prev in prev:
-                    res.append([prev, i])
+    for r , ch in enumerate(s):
+        if ch in ls and ls[ch] >= l:
+            l = ls[ch] + 1
         
-        if val not in Map:
-            Map[val] = []
-        Map[val].append(i)
-    return res if res else None
+        ls[ch] = r
+        max_len = max(max_len, r - l + 1)
 
+    return max_len
+
+
+s = "wdoawudwdiuhaihwddiw"
+print(longest_substring(s))
