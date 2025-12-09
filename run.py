@@ -18,7 +18,7 @@ def kandane(nums):
             start = sub_start
             end = i
 
-    return max_sum, nums[start:end + 1], start, end
+    return max_sum, nums[start : end + 1], start, end
 
 
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
