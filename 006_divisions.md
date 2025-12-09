@@ -7,4 +7,5 @@
 | //            | Floor division      |
 | %             | Remainder           |
 | divmod(a,b)   | Gives  (a//b, a%b)  |
+
 ```

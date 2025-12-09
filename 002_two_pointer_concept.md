@@ -108,3 +108,5 @@ This hierarchy is what everyone confuses because they memorize problems, not con
 ---
 
 If you're satisfied, next I’ll give you the **bulletproof notes** for each style with when to use them and when to avoid them.
+
+---

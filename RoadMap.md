@@ -62,7 +62,7 @@ After Phase 1, ONLY these matter.
 
 ## Note
 
-We are **NOT** touching Tree DP / Advanced DP.  
+We are **NOT** touching Tree DP / Advanced DP.
 Not needed for ML placements or FAANG-style coding rounds.
 
 ---

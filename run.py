@@ -21,6 +21,7 @@ def kandane(nums):
     return max_sum, nums[start : end + 1], start, end
 
 
+# Example usage
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 max_sum, subarray, start, end = kandane(nums)
 print("Input Array       :", nums)

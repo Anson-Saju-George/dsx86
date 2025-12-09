@@ -1,9 +1,4 @@
-Do you want:
-
-Greedy for Min Arrows to Burst Balloons (same interval trick)
-OR
-
+Min Arrows to Burst Balloons (same interval trick)
 Greedy for Jump Game (another classic)
-OR
-
-Greedy for Minimum Platforms (railway problem)?
+Greedy for Minimum Platforms (railway problem)
+Erase minimum number of intervals so that the rest don’t overlap

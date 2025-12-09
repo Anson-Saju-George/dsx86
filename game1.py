@@ -1,3 +1,5 @@
+# A simple loop that counts to 100 and resets
+
 import time
 
 x = 0

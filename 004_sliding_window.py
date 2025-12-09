@@ -1,16 +1,18 @@
 """
-    Two Pointer / Sliding Window Algorithms
-    Finding the longest substring without repeating characters
+Two Pointer / Sliding Window Algorithms
+Finding the longest substring without repeating characters
 """
 
 
 def length_of_longest_substring(s: str) -> int:
-    last_seen = {} # character -> last seen index
-    left = 0 # left pointer of the sliding window
-    max_len = 0 # maximum length of substring without repeating characters
+    last_seen = {}  # character -> last seen index
+    left = 0  # left pointer of the sliding window
+    max_len = 0  # maximum length of substring without repeating characters
 
-    for right, ch in enumerate(s): # right pointer of the sliding window
-        if ch in last_seen and last_seen[ch] >= left: # character already seen in the current window
+    for right, ch in enumerate(s):  # right pointer of the sliding window
+        if (
+            ch in last_seen and last_seen[ch] >= left
+        ):  # character already seen in the current window
             left = last_seen[ch] + 1
 
         last_seen[ch] = right
@@ -46,5 +48,4 @@ if __name__ == "__main__":
     print("Length     :", ln)
 
 
-if __name__ == "__main__":
-    print(length_of_longest_substring("wdoawudwdiuhaihwddiw"))
+print(length_of_longest_substring("wdoawudwdiuhaihwddiw"))

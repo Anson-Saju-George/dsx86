@@ -30,6 +30,7 @@ def kadane(nums):
 
     return max_sum
 
+
 def kadane_with_indices(nums):
     max_sum = nums[0]
     curr_sum = nums[0]
@@ -55,10 +56,11 @@ def kadane_with_indices(nums):
     return max_sum, start, end
 
 
+# Example usage:
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 print(kadane(nums))
-
+# Using the version that also returns indices
 max_sum, start, end = kadane_with_indices(nums)
 print("Max Subarray Sum:", max_sum)
-print("Subarray:", nums[start:end+1])
+print("Subarray:", nums[start : end + 1])
 print("Indices:", (start, end))
