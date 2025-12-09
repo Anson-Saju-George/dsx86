@@ -4,8 +4,8 @@ import time
 
 x = 0
 while x < 100:
+    print("%d" % (x, x))
     x += 1
-    print("%d %d" % (x, x))
     if x == 100:
         print("Reached 100!")
         x = 0
