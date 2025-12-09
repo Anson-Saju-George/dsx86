@@ -1,23 +1,30 @@
-from collections import defaultdict
+def kandane(nums):
+    max_sum = nums[0]
+    curr_sum = nums[0]
+    start = end = 0
+    sub_start = 0
+
+    for i in range(1, len(nums)):
+        x = nums[i]
+
+        if curr_sum + x < x:
+            curr_sum = x
+            sub_start = i
+        else:
+            curr_sum += x
+
+        if curr_sum > max_sum:
+            max_sum = curr_sum
+            start = sub_start
+            end = i
+
+    return max_sum, nums[start:end + 1], start, end
 
 
-def count_subarrays_with_sum(nums, k):
-    prefix_sum = 0
-    count = 0
-
-    freq = defaultdict(int)
-    freq[0] = 1
-
-    for x in nums:
-        prefix_sum += x
-        need = prefix_sum - k
-        count += freq[need]
-        freq[prefix_sum] += 1
-
-    return count
-
-
-if __name__ == "__main__":
-    nums = [1, 2, 3, -2, 5]
-    k = 3
-    print(count_subarrays_with_sum(nums, k))  # expect 3
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+max_sum, subarray, start, end = kandane(nums)
+print("Input Array       :", nums)
+print("Max Subarray Sum  :", max_sum)
+print("Subarray          :", subarray)
+print("Start Index       :", start)
+print("End Index         :", end)
