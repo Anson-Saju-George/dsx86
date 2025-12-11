@@ -2,3 +2,9 @@ Min Arrows to Burst Balloons (same interval trick)
 Greedy for Jump Game (another classic)
 Greedy for Minimum Platforms (railway problem)
 Erase minimum number of intervals so that the rest don’t overlap
+
+“coin change greedy”
+“gas station greedy”
+“jump game II” (minimum jumps)
+“fractional knapsack”
+“meeting rooms II”

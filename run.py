@@ -1,31 +1,29 @@
-def kandane(nums):
-    max_sum = nums[0]
-    curr_sum = nums[0]
-    start = end = 0
-    sub_start = 0
+def min_platforms(arrivals, departures):
+    arrivals.sort()  # Sort arrival times
+    departures.sort()  # Sort departure times
 
-    for i in range(1, len(nums)):
-        x = nums[i]
+    i = j = 0
+    platforms = 0
+    max_platforms = 0
+    l = len(arrivals)
 
-        if curr_sum + x < x:
-            curr_sum = x
-            sub_start = i
+    while i < l and j < l:
+        if arrivals[i] <= departures[j]:
+            platforms += 1
+            max_platforms = max(max_platforms, platforms)
+            i += 1
         else:
-            curr_sum += x
+            platforms -= 1
+            j += 1
 
-        if curr_sum > max_sum:
-            max_sum = curr_sum
-            start = sub_start
-            end = i
-
-    return max_sum, nums[start : end + 1], start, end
+    return max_platforms
 
 
-# Example usage
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-max_sum, subarray, start, end = kandane(nums)
-print("Input Array       :", nums)
-print("Max Subarray Sum  :", max_sum)
-print("Subarray          :", subarray)
-print("Start Index       :", start)
-print("End Index         :", end)
+arr = [900, 940, 950, 1100, 1500, 1800]
+dep = [910, 1200, 1120, 1130, 1900, 2000]
+
+# Example usage:
+print(min_platforms(arr, dep))  # Output: 3
+print(min_platforms([100, 200, 300], [150, 250, 350]))  # Output: 1
+print(min_platforms([100, 200, 300], [120, 220, 320]))  # Output: 1
+print(min_platforms([900, 950], [1100, 1200]))  # Output: 2
