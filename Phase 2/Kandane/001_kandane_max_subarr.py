@@ -64,3 +64,6 @@ max_sum, start, end = kadane_with_indices(nums)
 print("Max Subarray Sum:", max_sum)
 print("Subarray:", nums[start : end + 1])
 print("Indices:", (start, end))
+
+
+print(kadane([5, -3, 5]))  # Output: 7
