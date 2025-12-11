@@ -20,7 +20,7 @@ def count_subarrays_with_sum(nums, k):
     return count
 
 
-if __name__ == "__main__":
-    nums = [1, 2, 3, 7, 5]
-    k = 12
-    print(count_subarrays_with_sum(nums, k))  # expect 3
+# Example usage:
+nums = [1, 2, 3, 7, 5]
+k = 12
+print(count_subarrays_with_sum(nums, k))  # expect 3

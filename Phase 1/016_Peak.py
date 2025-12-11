@@ -43,5 +43,5 @@ print(find_peak(nums))
 nums = [3, 2, 1] + [1, 2, 3,]
 print(find_peak(nums))
 
-nums = [1, 5, 3, 4, 1, 7, 6]
+nums = [1, 5, 3, 4, 1, 7, 6] # Indices [1, 5, 7]
 print(find_all_peaks(nums))
