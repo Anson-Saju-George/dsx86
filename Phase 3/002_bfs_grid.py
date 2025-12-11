@@ -1,3 +1,5 @@
+from collections import deque
+
 def bfs_grid(grid, sr, sc):
     n, m = len(grid), len(grid[0])
     q = deque([(sr, sc)])
