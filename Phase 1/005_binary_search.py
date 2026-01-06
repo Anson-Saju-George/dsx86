@@ -5,12 +5,8 @@ def binary_search(nums, target):
     left = 0  # Initialize left pointer
     right = len(nums) - 1  # Initialize right pointer
 
-    while (
-        left <= right
-    ):  # Continue searching while the left pointer is less than or equal to the right pointer
-        mid = (
-            left + right
-        ) // 2  # Calculate the middle index by taking the floor of the average of left and right
+    while (left <= right):  # Continue searching while the left pointer is less than or equal to the right pointer
+        mid = (left + right) // 2  # Calculate the middle index by taking the floor of the average of left and right
 
         if nums[mid] == target:  # Check if the middle element is the target
             return mid  # Target found, return the index

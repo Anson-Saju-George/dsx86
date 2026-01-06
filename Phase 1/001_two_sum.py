@@ -1,9 +1,9 @@
 # Two Sum Problem Solutions
 """
 This module provides three different implementations to solve the Two Sum problem:
-1. Finding a single pair of indices that sum to the target.
-2. Finding all pairs of indices that sum to the target, including duplicates.
-3. Finding all unique pairs of values that sum to the target, avoiding duplicates.
+    1. Finding a single pair of indices that sum to the target.
+    2. Finding all pairs of indices that sum to the target, including duplicates.
+    3. Finding all unique pairs of values that sum to the target, avoiding duplicates.
 """
 
 def two_sum_single(nums, target):

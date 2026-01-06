@@ -9,6 +9,7 @@
 # Similarly, find the LAST index `j` such that:
 #     arr[j] <= target
 
+# first ge: first greater than or equal
 
 def first_ge(arr, target):
     left, right = 0, len(arr) - 1
@@ -33,6 +34,7 @@ def first_ge(arr, target):
 # If such an index does not exist, return -1.
 # This is also known as the "upper bound - 1" or -1.
 
+# last le: last less than or equal
 
 def last_le(arr, target):
     left, right = 0, len(arr) - 1
@@ -52,10 +54,10 @@ def last_le(arr, target):
 # Example usage:
 arr = [1, 2, 4, 4, 4, 7, 9]
 
-first_ge(arr, 4)  # → 2
-first_ge(arr, 5)  # → 5
-first_ge(arr, 10)  # → 7
-
-last_le(arr, 4)  # → 4
-last_le(arr, 3)  # → 1
-last_le(arr, 0)  # → -1
+print("first_ge(arr, 4): \t", first_ge(arr, 4))  # → 2
+print("first_ge(arr, 5): \t", first_ge(arr, 5))  # → 5
+print("first_ge(arr, 10):\t", first_ge(arr, 10))  # → 7
+print()
+print("last_le(arr, 4): \t", last_le(arr, 4))  # → 4
+print("last_le(arr, 3): \t", last_le(arr, 3))  # → 1
+print("last_le(arr, 0): \t", last_le(arr, 0))  # → -1

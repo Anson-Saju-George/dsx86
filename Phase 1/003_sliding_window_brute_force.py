@@ -11,8 +11,7 @@ def longest_substring_bruteforce(s: str) -> int:
             if s[j] in seen:  # If character is already seen, break the loop
                 break
             seen.add(s[j])  # Add character to the set if not seen
-            max_len = max(
-                max_len, j - i + 1
+            max_len = max(max_len, j - i + 1
             )  # Update max_len if current substring is longer
 
     return max_len  # Return the length of the longest substring without repeating characters

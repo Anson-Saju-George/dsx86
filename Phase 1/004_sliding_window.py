@@ -10,10 +10,9 @@ def length_of_longest_substring(s: str) -> int:
     max_len = 0  # maximum length of substring without repeating characters
 
     for right, ch in enumerate(s):  # right pointer of the sliding window
-        if (
-            ch in last_seen and last_seen[ch] >= left
-        ):  # character already seen in the current window
+        if (ch in last_seen and last_seen[ch] >= left):  # character already seen in the current window
             left = last_seen[ch] + 1
+            print("left = ",left, last_seen[ch])
 
         last_seen[ch] = right
         max_len = max(max_len, right - left + 1)
