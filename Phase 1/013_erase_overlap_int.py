@@ -18,25 +18,25 @@ def erase_overlap_intervals_count(intervals):
 
 def erase_overlap_intervals(intervals):
     """
-    intervals: list of [start, end]
-    returns: (to_remove_count, removed_indices)
-    removed_indices are indices from the original list
+        intervals: list of [start, end]
+        returns: (to_remove_count, removed_indices)
+        removed_indices are indices from the original list
     """
     if not intervals:
         return 0, []
 
     # Attach original indices
-    indexed = [(s, e, idx) for idx, (s, e) in enumerate(intervals)]
+    indexed = [(start, end, idx) for idx, (start, end) in enumerate(intervals)]
     # sort by end time
     indexed.sort(key=lambda x: x[1])
 
     kept = []  # list of kept original indices
     last_end = float("-inf")
 
-    for s, e, idx in indexed:
-        if s >= last_end:
+    for start, end, idx in indexed:
+        if start >= last_end:
             kept.append(idx)
-            last_end = e
+            last_end = end
         # else: overlapping, do not keep
 
     kept_set = set(kept)

@@ -5,7 +5,6 @@ def can_jump(nums):
         if i > farthest:  # can't even reach index i
             return False
         farthest = max(farthest, i + jump)
-        print(i, "", jump)
 
     return True
 
@@ -13,4 +12,5 @@ def can_jump(nums):
 # Example usage:
 #              [0, 1, 2, 3, 4]
 print(can_jump([2, 3, 1, 1, 4]))  # True
+print(can_jump([2, 3, 1, 2, 4]))  # True
 print(can_jump([3, 2, 1, 0, 4]))  # False
