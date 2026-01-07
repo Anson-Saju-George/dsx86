@@ -1,17 +1,17 @@
 """
-Kandane's Algorithm to find the maximum sum of a contiguous subarray.
-Kandane's algorithm aka Maximum Subarray Problem.
+    Kandane's Algorithm to find the maximum sum of a contiguous subarray.
+    Kandane's algorithm aka Maximum Subarray Problem.
 
-Steps:
-1. Initialize two variables: max_current and max_global to the first element of the array.
-2. Iterate through the array starting from the second element.
-3. For each element, update max_current to be the maximum of the current element and max_current plus the current element.
-4. Update max_global to be the maximum of max_global and max_current.
-5. Return max_global as the result.
+    Steps:
+    1. Initialize two variables: max_current and max_global to the first element of the array.
+    2. Iterate through the array starting from the second element.
+    3. For each element, update max_current to be the maximum of the current element and max_current plus the current element.
+    4. Update max_global to be the maximum of max_global and max_current.
+    5. Return max_global as the result.
 
-This implementation also returns the subarray itself.
-Time Complexity: O(n)
-Space Complexity: O(1)
+    This implementation also returns the subarray itself.
+    Time Complexity: O(n)
+    Space Complexity: O(1)
 """
 
 # Think of it as a bus that can either start a new route
@@ -41,7 +41,7 @@ def kadane_with_indices(nums):
         x = nums[i]
 
         # either extend or restart window
-        if curr_sum + x < x:
+        if x > curr_sum + x:
             curr_sum = x
             temp_start = i
         else:
