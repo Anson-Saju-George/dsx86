@@ -9,3 +9,7 @@ def total_covered_length(intervals):
         else:
             merged.append([s, e])
     return sum(e - s for s, e in merged)
+
+# Example usage:
+intervals = [[1, 3], [2, 4], [5, 7]]
+print(total_covered_length(intervals))  # Output: 5

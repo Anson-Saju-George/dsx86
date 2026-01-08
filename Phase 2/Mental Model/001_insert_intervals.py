@@ -22,3 +22,9 @@ def insert_interval(intervals, new):
         i += 1
 
     return res
+
+
+# Example usage:
+intervals = [[1, 3], [6, 9]]
+new = [2, 5]
+print(insert_interval(intervals, new))  # Output: [[1, 5], [6, 9]]

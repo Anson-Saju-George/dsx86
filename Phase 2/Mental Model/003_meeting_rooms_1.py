@@ -12,3 +12,9 @@ def can_attend_meetings(intervals):
             return False
 
     return True
+
+# Example usage:
+meetings = [[0, 30], [5, 10], [15, 20]]
+meetings2 = [[7, 10], [2, 4]]
+print(can_attend_meetings(meetings))  # Output: False
+print(can_attend_meetings(meetings2))  # Output: True

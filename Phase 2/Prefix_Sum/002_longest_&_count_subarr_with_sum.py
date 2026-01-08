@@ -3,8 +3,8 @@ from typing import List, Tuple, Optional
 
 def count_subarrays_with_sum(nums: List[int], k: int) -> int:
     """
-    Count number of contiguous subarrays with sum == k.
-    O(n) time, O(n) space.
+        Count number of contiguous subarrays with sum == k.
+        O(n) time, O(n) space.
     """
     prefix_sum = 0
     freq = defaultdict(int)
@@ -22,14 +22,14 @@ def count_subarrays_with_sum(nums: List[int], k: int) -> int:
 
 def longest_subarray_with_sum(nums: List[int], k: int) -> Tuple[int, Optional[int], Optional[int]]:
     """
-    Return tuple (length, start_index, end_index) of the longest contiguous subarray with sum == k.
-    If none found, returns (0, None, None).
-    Uses prefix-sum -> earliest-index map to achieve O(n).
+        Return tuple (length, start_index, end_index) of the longest contiguous subarray with sum == k.
+        If none found, returns (0, None, None).
+        Uses prefix-sum -> earliest-index map to achieve O(n).
     """
     prefix_sum = 0
     # store earliest occurrence of a prefix sum
     first_occurrence = {0: -1}  # prefix 0 at index -1 (helps subarrays starting at 0)
-    
+
     best_len = 0
     best_start = None
     best_end = None

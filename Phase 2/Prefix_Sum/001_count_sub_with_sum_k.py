@@ -3,24 +3,37 @@
 from collections import defaultdict
 
 
+from collections import defaultdict
+
 def count_subarrays_with_sum(nums, k):
-    prefix_sum = 0
-    count = 0
-    freq = defaultdict(
-        int
-    )  # prefix sum frequency i.e how many times a prefix sum has occurred
-    freq[0] = 1  # important: empty prefix
+    prefix = 0
+    answer = 0
+    prefix_count = defaultdict(int)
+    prefix_count[0] = 1   # prefix sum before starting (empty prefix)
 
-    for x in nums:
-        prefix_sum += x  # current prefix sum
-        need = prefix_sum - k  # we need this prefix sum to form a subarray with sum k
-        count += freq[need]  # add the number of times 'need' has occurred
-        freq[prefix_sum] += 1  # update the frequency of the current prefix sum
+    for value in nums:
+        # prefix[j]
+        prefix += value
 
-    return count
+        # prefix[i] = prefix[j] - k
+        # derived from prefixSum[ j ] - prefixSum[ i-1 ] = k
+        required_prefix = prefix - k
+#       prefixSum[i-1] ----> prefixSum[j]
+#           req_prefix         prefix
+
+        # count how many such prefix[i] exist
+        answer += prefix_count[required_prefix] # check if required_prefix exists if so add its count
+
+        # record prefix[j]
+        prefix_count[prefix] += 1
+
+    return answer
+
 
 
 # Example usage:
 nums = [1, 2, 3, 7, 5]
 k = 12
+print(count_subarrays_with_sum(nums, k))  # expect 2
+nums = [1, 2, 3, 7, 5, -5, -7, 3]
 print(count_subarrays_with_sum(nums, k))  # expect 3

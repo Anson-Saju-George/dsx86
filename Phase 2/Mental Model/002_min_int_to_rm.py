@@ -5,8 +5,12 @@ def min_intervals_to_remove(intervals):
     count = 0
     last_end = float('-inf')
 
-    for s, e in intervals:
-        if s >= last_end:
+    for start, end in intervals:
+        if start >= last_end:
             count += 1
-            last_end = e
+            last_end = end
     return len(intervals) - count
+
+# Example usage:
+intervals = [[1, 2], [2, 3], [3, 4], [1, 3]]
+print(min_intervals_to_remove(intervals))  # Output: 1
